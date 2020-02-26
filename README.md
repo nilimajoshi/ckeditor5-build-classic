@@ -1,6 +1,8 @@
 CKEditor 5 classic editor build
 ========================================
 
+https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installing-plugins.html
+
 [![npm version](https://badge.fury.io/js/%40ckeditor%2Fckeditor5-build-classic.svg)](https://www.npmjs.com/package/@ckeditor/ckeditor5-build-classic)
 [![Build Status](https://travis-ci.org/ckeditor/ckeditor5-build-classic.svg?branch=master)](https://travis-ci.org/ckeditor/ckeditor5-build-classic)
 <br>
