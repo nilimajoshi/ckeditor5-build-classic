@@ -21,6 +21,9 @@ import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
@@ -29,8 +32,10 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase {
+}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -42,7 +47,7 @@ ClassicEditor.builtinPlugins = [
 	BlockQuote,
 	CKFinder,
 	EasyImage,
-	Heading,
+	Heading,Alignment,
 	Image,
 	ImageResize,
 	ImageCaption,
@@ -56,11 +61,55 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	FontFamily,
+	FontSize,
+	FontColor,
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
+	fontFamily: {
+		options: [
+			'default',
+			'Ubuntu','Arial', 'sans-serif',
+			'Ubuntu Mono', 'Courier New', 'Courier', 'monospace'
+		]
+	},
+	fontSize: {
+		options: [
+			'small',
+			'default',
+			'big'
+		]
+	},
+	fontColor: {
+		colors: [
+			{
+				color: 'hsl(0, 0%, 0%)',
+				label: 'Black'
+			},
+			{
+				color: 'hsl(0, 0%, 30%)',
+				label: 'Dim grey'
+			},
+			{
+				color: 'hsl(0, 0%, 60%)',
+				label: 'Grey'
+			},
+			{
+				color: 'hsl(0, 0%, 90%)',
+				label: 'Light grey'
+			},
+			{
+				color: 'hsl(0, 0%, 100%)',
+				label: 'White',
+				hasBorder: true
+			},
+
+			// ...
+		]
+	},
 	toolbar: {
 		items: [
 			'heading',
@@ -70,6 +119,11 @@ ClassicEditor.defaultConfig = {
 			'link',
 			'bulletedList',
 			'numberedList',
+			'|',
+			'fontSize',
+			'fontColor',
+			'fontFamily',
+			'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify',
 			'|',
 			'indent',
 			'outdent',
@@ -103,3 +157,8 @@ ClassicEditor.defaultConfig = {
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
+
+// cd sources/ckeditor5-build-classic
+// nvm use 12
+// yarn run build
+// cp -r build/ ../../sources/survale/survale-fe/customer-portal/node_modules/@ckeditor/ckeditor5-build-classic/build
