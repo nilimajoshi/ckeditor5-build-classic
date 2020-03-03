@@ -47,7 +47,8 @@ ClassicEditor.builtinPlugins = [
 	BlockQuote,
 	CKFinder,
 	EasyImage,
-	Heading,Alignment,
+	Heading,
+	Alignment,
 	Image,
 	ImageResize,
 	ImageCaption,
@@ -72,20 +73,43 @@ ClassicEditor.defaultConfig = {
 	fontFamily: {
 		options: [
 			'default',
-			'Ubuntu','Arial', 'sans-serif',
+			'Ubuntu', 'Arial', 'sans-serif',
 			'Ubuntu Mono', 'Courier New', 'Courier', 'monospace'
 		]
 	},
 	fontSize: {
 		options: [
-			'small',
+			9,
+			11,
+			13,
 			'default',
-			'big'
+			17,
+			19,
+			21
 		]
 	},
 	fontColor: {
 		colors: [
 			{
+				color: 'hsl(0, 75%, 60%)',
+				label: 'Red'
+			},
+			{
+				color: 'hsl(30, 75%, 60%)',
+				label: 'Orange'
+			},
+			{
+				color: 'hsl(60, 75%, 60%)',
+				label: 'Yellow'
+			},
+			{
+				color: 'hsl(90, 75%, 60%)',
+				label: 'Light green'
+			},
+			{
+				color: 'hsl(120, 75%, 60%)',
+				label: 'Green'
+			}, {
 				color: 'hsl(0, 0%, 0%)',
 				label: 'Black'
 			},
@@ -101,13 +125,6 @@ ClassicEditor.defaultConfig = {
 				color: 'hsl(0, 0%, 90%)',
 				label: 'Light grey'
 			},
-			{
-				color: 'hsl(0, 0%, 100%)',
-				label: 'White',
-				hasBorder: true
-			},
-
-			// ...
 		]
 	},
 	toolbar: {
