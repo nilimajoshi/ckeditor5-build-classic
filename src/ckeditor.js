@@ -155,13 +155,22 @@ ClassicEditor.defaultConfig = {
 	},
 	image: {
 		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'imageStyle:alignLeft',
-			'imageStyle:alignCenter',
-			'imageStyle:alignRight',
-			'|',
-			'imageTextAlternative'
+			'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'
+			// 'imageStyle:full',
+			// 'imageStyle:side',
+			// 'imageStyle:alignLeft',
+			// 'imageStyle:alignCenter',
+			// 'imageStyle:alignRight',
+			// '|',
+			// 'imageTextAlternative'
+		],
+		styles: [
+			// This option is equal to a situation where no style is applied.
+			'full',
+			// This represents an image aligned to the left.
+			'alignLeft',
+			// This represents an image aligned to the right.
+			'alignRight'
 		]
 	},
 	table: {
@@ -175,7 +184,7 @@ ClassicEditor.defaultConfig = {
 	language: 'en'
 };
 
-// cd sources/ckeditor5-build-classic
+// cd ~/sources/ckeditor5-build-classic
 // nvm use 12
 // yarn run build
 // cp -r build/ ../../sources/survale/survale-fe/customer-portal/node_modules/@ckeditor/ckeditor5-build-classic/build
