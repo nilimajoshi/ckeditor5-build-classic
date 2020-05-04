@@ -16,7 +16,7 @@ import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
+// import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
@@ -33,6 +33,12 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Clipboard from '@ckeditor/ckeditor5-clipboard/src/clipboard';
+// import ClipboardObserver from '@ckeditor/ckeditor5-clipboard/src/clipboardobserver';
+import Enter from '@ckeditor/ckeditor5-enter/src/enter';
+// import EnterCommand from '@ckeditor/ckeditor5-enter/src/entercommand';
+// import EnterObserver from '@ckeditor/ckeditor5-enter/src/enterobserver';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -44,6 +50,7 @@ ClassicEditor.builtinPlugins = [
 	Autoformat,
 	Bold,
 	Italic,
+	Underline,
 	BlockQuote,
 	CKFinder,
 	EasyImage,
@@ -51,7 +58,7 @@ ClassicEditor.builtinPlugins = [
 	Alignment,
 	Image,
 	ImageResize,
-	ImageCaption,
+	// ImageCaption,
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
@@ -66,6 +73,8 @@ ClassicEditor.builtinPlugins = [
 	FontFamily,
 	FontSize,
 	FontColor,
+	Clipboard,
+	Enter
 ];
 
 // Editor configuration.
