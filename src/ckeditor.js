@@ -136,7 +136,7 @@ ClassicEditor.defaultConfig = {
 			{
 				color: 'hsl(0, 0%, 90%)',
 				label: 'Light grey'
-			},
+			}
 		]
 	},
 	toolbar: {
