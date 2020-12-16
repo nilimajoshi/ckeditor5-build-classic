@@ -12,7 +12,7 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+// import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
@@ -27,11 +27,11 @@ import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+// import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
-import Table from '@ckeditor/ckeditor5-table/src/table';
-import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+// import Table from '@ckeditor/ckeditor5-table/src/table';
+// import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Clipboard from '@ckeditor/ckeditor5-clipboard/src/clipboard';
 // import ClipboardObserver from '@ckeditor/ckeditor5-clipboard/src/clipboardobserver';
@@ -39,6 +39,7 @@ import Enter from '@ckeditor/ckeditor5-enter/src/enter';
 // import EnterCommand from '@ckeditor/ckeditor5-enter/src/entercommand';
 // import EnterObserver from '@ckeditor/ckeditor5-enter/src/enterobserver';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -52,7 +53,7 @@ ClassicEditor.builtinPlugins = [
 	Italic,
 	Underline,
 	BlockQuote,
-	CKFinder,
+	// CKFinder,
 	EasyImage,
 	Heading,
 	Alignment,
@@ -65,16 +66,18 @@ ClassicEditor.builtinPlugins = [
 	Indent,
 	Link,
 	List,
-	MediaEmbed,
+	// MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
-	Table,
-	TableToolbar,
+	// Table,
+	// TableToolbar,
 	FontFamily,
 	FontSize,
 	FontColor,
 	Clipboard,
-	Enter
+	Enter,
+	HtmlEmbed
+
 ];
 
 // Editor configuration.
@@ -157,8 +160,9 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'imageUpload',
 			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
+			'htmlEmbed',
+			// 'insertTable',
+			// 'mediaEmbed',
 			'undo',
 			'redo'
 		]
@@ -183,13 +187,28 @@ ClassicEditor.defaultConfig = {
 			'alignRight'
 		]
 	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
+	htmlEmbed: {
+		showPreviews: true
+		// sanitizeHtml: (inputHtml) => {
+		// 	// Strip unsafe elements and attributes, e.g.:
+		// 	// the `<script>` elements and `on*` attributes.
+		// 	const outputHtml = sanitize(inputHtml);
+		//
+		// 	return {
+		// 		html: outputHtml,
+		// 		// true or false depending on whether the sanitizer stripped anything.
+		// 		hasChanged: true
+		// 	};
+		// }
 	},
+
+	// table: {
+	// 	contentToolbar: [
+	// 		'tableColumn',
+	// 		'tableRow',
+	// 		'mergeTableCells'
+	// 	]
+	// },
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };

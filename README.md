@@ -1,4 +1,4 @@
-CKEditor 5 classic editor build
+	CKEditor 5 classic editor build
 ========================================
 
 Read this for installing plugins
