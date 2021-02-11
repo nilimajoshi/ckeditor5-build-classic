@@ -136,6 +136,10 @@ ClassicEditor.defaultConfig = {
 			{
 				color: 'hsl(0, 0%, 90%)',
 				label: 'Light grey'
+			},
+			{
+				color: 'hsl(192, 96%, 20%)',
+				label: 'Teal'
 			}
 		]
 	},
